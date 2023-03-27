@@ -1,0 +1,1 @@
+Este repositório foi feito para mostrar os códigos feitos por mim na aula de Programação de Computadores I, no curso de Bacharelado de Sistemas de Informação - CEFET-MG
