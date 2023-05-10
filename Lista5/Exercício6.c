@@ -11,7 +11,7 @@ int main()
 
     for (i = 0; i < 30; i++)
     {
-        vetor[i] = rand() % (100 - 1 + 1) + 1;
+        vetor[i] = rand() % 100 + 1;
     }
 
     printf("Informe um número: ");

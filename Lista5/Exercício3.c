@@ -15,7 +15,7 @@ int main()
     while (naoExisteVencedor)
     {
         printf("..::RODADA %d::..\n", numRodada);
-        dado = rand() % (6 - 1 + 1) + 1;
+        dado = rand() % 6 + 1;
         posicaoJogador1 += dado;
         if (posicaoJogador1 < 100)
         {
