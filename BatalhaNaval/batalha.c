@@ -8,20 +8,22 @@ int main()
     int i, j, qtdeNavios = 0, continuar = 1, sentido, sortearNum, qtdeBombas, qtdeAchado;
     srand(time(NULL));
 
+    // inicializa as matrizes
     for (i = 0; i < 15; i++)
     {
         for (j = 0; j < 15; j++)
         {
-            matrizShow[i][j] = '.';
-            matrizNavios[i][j] = '.';
+            matrizShow[i][j] = matrizNavios[i][j] = '.';
         }
     }
 
+    // sorteio das posições dos navios
     do
     {
         sentido = rand() % 2;
         if (qtdeNavios < 1)
         {
+            // se sentido = 1 -> horizontal, se sentido = 0 -> vertical
             if (sentido == 1)
             {
                 sortearNum = 1;
@@ -30,14 +32,11 @@ int main()
                     i = rand() % 15;
                     j = rand() % 11;
 
+                    // somente se todas as posições que serão ocupadas estiverem vazias que o navio é posicionado
                     if (matrizNavios[i][j] == '.' && matrizNavios[i][j + 1] == '.' && matrizNavios[i][j + 2] == '.' && matrizNavios[i][j + 3] == '.' && matrizNavios[i][j + 4] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'p';
-                        matrizNavios[i][j + 1] = 'p';
-                        matrizNavios[i][j + 2] = 'p';
-                        matrizNavios[i][j + 3] = 'p';
-                        matrizNavios[i][j + 4] = 'p';
+                        matrizNavios[i][j] = matrizNavios[i][j + 1] = matrizNavios[i][j + 2] = matrizNavios[i][j + 3] = matrizNavios[i][j + 4] = 'P';
                     }
                 } while (sortearNum);
             }
@@ -52,11 +51,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i + 1][j] == '.' && matrizNavios[i + 2][j] == '.' && matrizNavios[i + 3][j] == '.' && matrizNavios[i + 4][j] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'p';
-                        matrizNavios[i + 1][j] = 'p';
-                        matrizNavios[i + 2][j] = 'p';
-                        matrizNavios[i + 3][j] = 'p';
-                        matrizNavios[i + 4][j] = 'p';
+                        matrizNavios[i][j] = matrizNavios[i + 1][j] = matrizNavios[i + 2][j] = matrizNavios[i + 3][j] = matrizNavios[i + 4][j] = 'P';
                     }
                 } while (sortearNum);
             }
@@ -76,10 +71,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i][j + 1] == '.' && matrizNavios[i][j + 2] == '.' && matrizNavios[i][j + 3] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'n';
-                        matrizNavios[i][j + 1] = 'n';
-                        matrizNavios[i][j + 2] = 'n';
-                        matrizNavios[i][j + 3] = 'n';
+                        matrizNavios[i][j] = matrizNavios[i][j + 1] = matrizNavios[i][j + 2] = matrizNavios[i][j + 3] = 'N';
                     }
                 } while (sortearNum);
             }
@@ -94,10 +86,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i + 1][j] == '.' && matrizNavios[i + 2][j] == '.' && matrizNavios[i + 3][j] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'n';
-                        matrizNavios[i + 1][j] = 'n';
-                        matrizNavios[i + 2][j] = 'n';
-                        matrizNavios[i + 3][j] = 'n';
+                        matrizNavios[i][j] = matrizNavios[i + 1][j] = matrizNavios[i + 2][j] = matrizNavios[i + 3][j] = 'N';
                     }
                 } while (sortearNum);
             }
@@ -117,9 +106,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i][j + 1] == '.' && matrizNavios[i][j + 2] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'c';
-                        matrizNavios[i][j + 1] = 'c';
-                        matrizNavios[i][j + 2] = 'c';
+                        matrizNavios[i][j] = matrizNavios[i][j + 1] = matrizNavios[i][j + 2] = 'C';
                     }
                 } while (sortearNum);
             }
@@ -134,9 +121,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i + 1][j] == '.' && matrizNavios[i + 2][j] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 'c';
-                        matrizNavios[i + 1][j] = 'c';
-                        matrizNavios[i + 2][j] = 'c';
+                        matrizNavios[i][j] = matrizNavios[i + 1][j] = matrizNavios[i + 2][j] = 'C';
                     }
                 } while (sortearNum);
             }
@@ -156,8 +141,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i][j + 1] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 's';
-                        matrizNavios[i][j + 1] = 's';
+                        matrizNavios[i][j] = matrizNavios[i][j + 1] = 'S';
                     }
                 } while (sortearNum);
             }
@@ -172,8 +156,7 @@ int main()
                     if (matrizNavios[i][j] == '.' && matrizNavios[i + 1][j] == '.')
                     {
                         sortearNum = 0;
-                        matrizNavios[i][j] = 's';
-                        matrizNavios[i + 1][j] = 's';
+                        matrizNavios[i][j] = matrizNavios[i + 1][j] = 'S';
                     }
                 } while (sortearNum);
             }
@@ -205,7 +188,7 @@ int main()
     {
         qtdeBombas = 150;
     }
-
+    
     continuar = 1;
     qtdeAchado = 0;
     do
@@ -232,20 +215,22 @@ int main()
         printf("\nInforme a linha e a coluna que quer jogar a bomba:\n");
         scanf("%d%d", &i, &j);
 
-        if (matrizNavios[i - 1][j - 1] != '.')
+        if (matrizShow[i - 1][j - 1] == '.')
         {
-            matrizShow[i - 1][j - 1] = matrizNavios[i - 1][j - 1];
-            qtdeAchado++;
+            if (matrizNavios[i - 1][j - 1] != '.')
+            {
+                matrizShow[i - 1][j - 1] = matrizNavios[i - 1][j - 1];
+                qtdeAchado++;
+            }
+            else
+            {
+                matrizShow[i - 1][j - 1] = '=';
+            }
+            qtdeBombas--;
         }
-        else
-        {
-            matrizShow[i - 1][j - 1] = '=';
-        }
-        qtdeBombas--;
 
         if (qtdeAchado == 30)
         {
-            printf("Você conseguiu achar todos os navios!");
             continuar = 0;
         }
     } while (continuar && qtdeBombas > 0);
@@ -253,24 +238,28 @@ int main()
     if (qtdeBombas == 0)
     {
         printf("Você perdeu!\n\n");
-    }
 
-    printf("Posições do navio:\n");
-    printf("%2c", 'x');
-    for (i = 0; i < 15; i++)
-    {
-        printf("%2d ", i + 1);
-    }
-    printf("\n");
-
-    for (i = 0; i < 15; i++)
-    {
-        printf("%2d", i + 1);
-        for (j = 0; j < 15; j++)
+        printf("Posições do navio:\n");
+        printf("%2c", 'x');
+        for (i = 0; i < 15; i++)
         {
-            printf("%2c ", matrizNavios[i][j]);
+            printf("%2d ", i + 1);
         }
         printf("\n");
+
+        for (i = 0; i < 15; i++)
+        {
+            printf("%2d", i + 1);
+            for (j = 0; j < 15; j++)
+            {
+                printf("%2c ", matrizNavios[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else
+    {
+        printf("Parabéns! Você conseguiu achar todos os navios!");
     }
     return 0;
 }
