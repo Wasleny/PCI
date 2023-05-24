@@ -7,7 +7,7 @@ int main()
 
     printf("Informe a velocidade (km/h): ");
     scanf("%f", &velocidade);
-    printf("Informe o tempo (h): ", &tempo);
+    printf("Informe o tempo (h): ");
     scanf("%f", &tempo);
     printf("Consumo: %.2f", (velocidade * tempo) /15);
 
