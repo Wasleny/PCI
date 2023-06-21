@@ -100,7 +100,7 @@ void showCarsByBrand(struct Car cars[], int countCars)
     char brand[30], brandExists = 0;
 
     printf("Informe a marca: ");
-    scanf("%s", brand);
+    scanf(" %[^\n]s", brand);
 
     for (int i = 0; i < countCars; i++)
     {
@@ -133,10 +133,10 @@ void getCar(struct Car cars[], int countCars)
     int year, exists = 0;
 
     printf("Informe a marca: ");
-    scanf("%s", brand);
+    scanf(" %[^\n]s", brand);
 
     printf("Informe a cor: ");
-    scanf("%s", color);
+    scanf(" %[^\n]s", color);
 
     printf("Informe o ano: ");
     scanf("%d", &year);

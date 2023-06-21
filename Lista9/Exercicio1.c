@@ -70,7 +70,7 @@ void criaConta(struct ContaBancaria *conta, struct ContaBancaria contas[], int q
     conta->numConta = numConta;
 
     printf("Nome do cliente: ");
-    scanf("%s", conta->nomeCliente);
+    scanf(" %[^\n]s", conta->nomeCliente);
 
     printf("\n\n1 - Conta Corrente\n2 - Conta Poupança\n\n");
     do

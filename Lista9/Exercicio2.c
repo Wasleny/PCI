@@ -117,7 +117,7 @@ void showBooksByAuthor(struct Book books[], int countBooks)
     char author[30], authorExists = 0;
 
     printf("Informe o nome do autor: ");
-    scanf("%s", author);
+    scanf(" %[^\n]s", author);
 
     for (int i = 0; i < countBooks; i++)
     {
@@ -150,7 +150,7 @@ void showBooksByTitle(struct Book books[], int countBooks)
     char title[30], bookExists = 0;
 
     printf("Informe o título do livro: ");
-    scanf("%s", title);
+    scanf(" %[^\n]s", title);
 
     for (int i = 0; i < countBooks; i++)
     {
@@ -182,8 +182,8 @@ void showBooksByGenre(struct Book books[], int countBooks)
 {
     char genre[30], genreExists = 0;
 
-    printf("Informe o título do livro: ");
-    scanf("%s", genre);
+    printf("Informe o gênero: ");
+    scanf(" %[^\n]s", genre);
 
     for (int i = 0; i < countBooks; i++)
     {
